@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+execfile('pywhois/__version__.py')
 
 setup(name='pywhois',
-      version=version,
+      version=__version__,
       description="Whois querying and parsing of domain registration information.",
       long_description="""\
 """,
