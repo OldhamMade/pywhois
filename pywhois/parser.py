@@ -62,7 +62,7 @@ class WhoisEntry(object):
         """
         whois_regex = self._regex.get(attr)
         if whois_regex:
-            setattr(self, attr, re.findall(whois_regex, self.text))
+            setattr(self, attr, [item.strip() for item in re.findall(whois_regex, self.text)])
             return getattr(self, attr)
         else:
             raise KeyError('Unknown attribute: %s' % attr)
